@@ -1,0 +1,15 @@
+[Unit]
+Description=Webhooks Server
+
+[Service]
+ExecStart=/usr/local/bin/node /webhooks/index.js
+WorkingDirectory=/webhooks
+Restart=always
+RestartSec=10
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=webhooks-server
+Environment=NODE_ENV=production PORT=9000
+
+[Install]
+WantedBy=multi-user.target
