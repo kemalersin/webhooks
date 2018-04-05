@@ -16,9 +16,10 @@ class Helpers {
           shell.exec('gulp build')
           shell.cd('dist')
           shell.exec(process.env.NPM_INSTALL_CMD)
-          shell.exec('cp -rf * /var/www/html/' + repository)
         }
 
+        shell.exec('cp -rf * /var/www/html/' + repository)
+        
         if (+query.dockerized === 1) {
           shell.cd(process.env.DOCKER_DIR)
           shell.exec('docker-compose rm -s -f ' + repository)
