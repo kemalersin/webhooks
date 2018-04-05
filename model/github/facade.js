@@ -1,6 +1,6 @@
 const Facade = require('../../lib/facade')
 const githubSchema = require('./schema')
 
-class GithubFacade extends Facade {}
+class GitHubFacade extends Facade {}
 
-module.exports = new GithubFacade('Github', githubSchema)
+module.exports = new GitHubFacade('GitHub', githubSchema)

@@ -1,11 +1,5 @@
 require('dotenv').config()
 
-const ips = [
-  '127.0.0.1',
-  '192.30.252.0/22',
-  '185.199.108.0/22'
-]
-
 const express = require('express')
 const mongoose = require('mongoose')
 const helmet = require('helmet')
@@ -24,8 +18,10 @@ mongoose.Promise = bluebird
 mongoose.connect(config.mongo.url)
 
 app.use(helmet())
-app.use(ipfilter(ips, {mode: 'allow'}))
+
 app.use(bodyParser.urlencoded({ extended: true }))
+app.use(ipfilter(config.whitelist, {mode: 'allow'}))
+
 app.use(bodyParser.json())
 app.use(morgan('tiny'))
 
