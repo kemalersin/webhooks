@@ -14,12 +14,7 @@ GitHubController.prototype.run = function (req, res, next) {
     .then(doc => {
       Helpers.update(
         payload.repository.name,
-        req.query,
-        {
-          url: payload.repository.url,
-          username: process.env.GITHUB_USER,
-          password: process.env.GITHUB_PASS
-        }
+        req.query
       )
 
       res.status(201).end()

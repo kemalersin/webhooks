@@ -12,12 +12,7 @@ BitBucketController.prototype.run = function (req, res, next) {
     .then(doc => {
       Helpers.update(
         req.body.repository.name,
-        req.query,
-        {
-          url: req.body.repository.links.html.href,
-          username: process.env.BITBUCKET_USER,
-          password: process.env.BITBUCKET_PASS
-        }
+        req.query
       )
 
       res.status(201).end()

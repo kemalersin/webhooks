@@ -34,7 +34,13 @@ _you'll likely be consuming mongodb as a service, so make sure you set the env v
 npm start
 ```
 
+## service
 
+run app as service via pm2:
+
+```
+pm2 start index.js --name "webhooks"
+```
 
 
 

@@ -10,12 +10,12 @@ class Helpers {
 
     switch (query.type) {
       case 'node':
-        shell.exec(process.env.NPM_INSTALL_CMD)
+        shell.exec('npm install')
     
         if (query.toolkit === 'gulp') {
           shell.exec('gulp build')
           shell.cd('dist')
-          shell.exec(process.env.NPM_INSTALL_CMD)
+          shell.exec('npm install')
         }
 
         shell.exec('cp -rf * /var/www/html/' + repository)
