@@ -7,6 +7,9 @@ const config = {
     url: process.env.MONGO_DB_URI || 'mongodb://localhost/webhooks'
   },
   whitelist: [
+    process.env.IP,
+    process.env.POSTAL_IP,
+
     // GitHub
     '127.0.0.1',
     '192.30.252.0/22',

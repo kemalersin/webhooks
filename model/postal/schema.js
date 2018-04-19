@@ -1,8 +1,8 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
-const bitbucketSchema = new Schema({
+const postalSchema = new Schema({
   payload: { type: Object }
 })
 
-module.exports = bitbucketSchema
+module.exports = postalSchema
